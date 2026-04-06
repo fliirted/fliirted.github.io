@@ -1,0 +1,195 @@
+/* Base Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font: 14px/1 monospace, sans-serif;
+    margin-top: 20%;
+    height: 100vh;
+    width: 100vw;
+    background-color: #060606;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+    text-align: center;
+}
+
+.subtext{
+    font-size: 1.2em;
+    color: #888;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.tryme {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    background: #247cee;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    transition: padding-right 0.2s ease;
+}
+
+.tryme::after {
+    content: ">>> ";
+    padding-right: 10px;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.2s ease;
+}
+
+/* Hover state */
+.tryme:hover {
+    padding-right: 44px;
+}
+
+.tryme:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.pyrite {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    background-color: #060606;
+    font: 14px/1 monospace, sans-serif;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Shared Panel Wrappers */
+.editor-wrapper,
+.console-wrapper {
+    width: 50vw;
+    padding: 20px;
+}
+
+.editor-wrapper {
+    padding-right: 10px;
+    animation: fadeIn 1s forwards;
+}
+
+.console-wrapper {
+    padding-left: 10px;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+/* Header Bar */
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    height: 14px;
+    color: #fff;
+    background-color: #1b1b1b;
+    border: 1px solid #313131;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    font-family: monospace, sans-serif;
+}
+
+/* Shared Editor + Console Styles */
+#editor,
+#console {
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - 38px);
+    padding: 12px;
+    border: 1px solid #313131;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    color: #fff;
+    font: 14px/1.5 monospace, sans-serif;
+}
+
+/* Editor Specific */
+#editor {
+    display: flex;
+    align-items: flex-end;
+    background: #101010;
+    outline: none;
+    resize: none;
+    white-space: nowrap;
+}
+
+/* Console Specific */
+#console {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #000;
+    overflow-y: auto;
+}
+
+/* Run Button */
+#run {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+}
+
+/* Optional: Line Numbers (if used) */
+#editor-line-numbers {
+    color: #888;
+    background: #f0f0f0;
+    padding: 0 10px;
+    border-right: 1px solid #313131;
+}
+
+@media (max-width: 720px) {
+  .pyrite {
+    flex-direction: column;
+  }
+  
+  
+  
+  .console-wrapper {
+    box-sizing: border-box;
+    padding: 10px;
+    padding-top: 5px;
+    height: 50vh;
+    width: 100vw;
+  }
+  
+  .editor-wrapper {
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 5px;
+    height: 50vh;
+    width: 100vw;
+  }
+}

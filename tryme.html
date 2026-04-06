@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyrite</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+
+    <div class="pyrite">
+      <div class="editor-wrapper">
+        <div class='title'>
+          <span>&#123; &#125; Python</span>
+          <span id="run" onclick="runCompiler()">Run &#9654;</span>
+        </div>
+        <textarea id="editor" placeholder="" spellcheck="false"></textarea>
+      </div>
+
+      <div class="console-wrapper">
+        <div class='title'>
+          <span>&#36; Output</span>
+        </div>
+        <div id="console"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/fliirted/pyrite/dist/pyrite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fliirted/Facet/dist/facet.min.js"></script>
+  </body>
+</html>
